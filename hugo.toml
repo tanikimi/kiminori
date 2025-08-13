@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://kiminori.pages.dev/'
 languageCode = 'ja-jp'
 title = 'kiminori.me'
 theme = 'kiminori-theme'
