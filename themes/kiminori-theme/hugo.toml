@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://kiminori.pages.dev/'
 
 [[menus.main]]
 name = 'Home'
