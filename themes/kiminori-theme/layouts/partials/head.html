@@ -19,9 +19,14 @@
 <meta property="og:url" content="{{.Permalink}}" />
 <meta property="og:title"
     content='{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}' />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title"
+    content='{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}'>
 {{ if and .IsPage (in "works" .Section) }}
 {{ $filepath := printf "img/%s.jpg" .Params.thumbnail }}
 <meta property="og:image" content="{{.Permalink}}{{ $filepath }}" />
+<meta name="twitter:image" content="{{.Permalink}}{{ $filepath }}">
 {{ else }}
 <meta property="og:image" content="{{.Permalink}}/ogp.png" />
+<meta name="twitter:image" content="{{.Permalink}}/ogp.png">
 {{ end }}
