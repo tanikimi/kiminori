@@ -1,0 +1,62 @@
+<div class="header-logo">
+    <a href="{{.Site.BaseURL}}" title="kiminori.me | ホーム">kiminori.me</a>
+</div>
+<nav class="header-menu-wrapper">
+    <ul class="header-menu">
+        <li>
+            <a href="{{.Site.BaseURL}}works">Works</a>
+        </li>
+        <li>
+            <a href="{{.Site.BaseURL}}news">News</a>
+        </li>
+        <li>
+            <a href="{{.Site.BaseURL}}blog">Blog</a>
+        </li>
+        <li>
+            <a href="{{.Site.BaseURL}}about">About</a>
+        </li>
+    </ul>
+</nav>
+<!-- ハンバーガーメニュー -->
+<button id="header-humberger-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+    </svg>
+</button>
+<nav id="header-humberger-menu-wrapper">
+    <ul class="header-humberger-menu">
+        <li>
+            <a href="{{.Site.BaseURL}}works">
+                <span>Works</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222">
+                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="{{.Site.BaseURL}}news">
+                <span>News</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222">
+                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="{{.Site.BaseURL}}blog">
+                <span>Blog</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222">
+                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="{{.Site.BaseURL}}about">
+                <span>About</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222">
+                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>
+<label class="header-humberger-bg" for="header-humberger-btn"></label>

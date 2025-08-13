@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div class="article-wrapper">
+  <div class="article-main_text-wrapper" id="article-main_text-wrapper">
+    <h1>{{ .Title }}</h1>
+    <div class="article-info">
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format "2006/01/02" }}
+      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+      <a class="article-category-item" href="{{.Parent.Permalink}}">{{.Parent.Title}}</a>
+    </div>
+    {{ if .Params.tags }}
+    <ul class="article-tag-area">
+      {{ $BaseURL := .Site.BaseURL }}
+      {{ range $tag := .Params.tags }}
+      <li><a href="{{$BaseURL}}/tags/{{ $tag }}">#{{ $tag }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    <details class="article-outline-details">
+      <summary>Outline</summary>
+      <ul id="article-outline-details-ul"></ul>
+    </details>
+    <p>{{ .Summary }}</p>
+    {{ .Content }}
+    <div class="article-share" id="article-share">
+      <a href="http://twitter.com/share?url=%0a{{.Permalink}}&text={{.Title}} - {{.Site.Title}}" title="ページをXでシェア">
+        <span>
+          <span>Share to</span>
+          <span>𝕏</span>
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+          <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+        </svg>
+      </a>
+      <button id="copyURL" data-url="{{.Permalink}}" title="ページURLをクリップボードにコピー">Copy URL</button>
+    </div>
+  </div>
+  <div class="article-outline">
+    <h2>Outline</h2>
+    <ul id="article-outline-ul">
+    </ul>
+  </div>
+</div>
+{{ end }}

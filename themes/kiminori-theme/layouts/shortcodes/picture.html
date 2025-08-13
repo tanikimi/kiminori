@@ -1,0 +1,10 @@
+{{ $filepath := printf "img/%s.jpg" (.Get "filename") }}
+{{ $alt := .Get "alt"}}
+{{ with .Page.Resources.GetMatch $filepath }}
+{{ with .Resize (printf "%dx%d webp" .Width .Height) }}
+<picture>
+    <source srcset="{{ .RelPermalink }}" type="image/webp">
+    <img src="{{ $filepath }}" alt="{{ $alt }}" loading="lazy">
+</picture>
+{{ end }}
+{{ end }}

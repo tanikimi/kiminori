@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="list" id="list">
+    <h1>{{.Title}}</h1>
+    <div class="tag-wrapper">
+        {{ $TagNum := len .Pages }}
+        {{ $Pages := .Pages }}
+        {{ range $index,$_ := seq $TagNum }}
+        <a class="tag" href="{{ (index $Pages $index).Permalink }}">#{{ (index $Pages $index).Title }}</a>
+        {{ if lt $index (sub $TagNum 1) }}
+        <span>/</span>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}

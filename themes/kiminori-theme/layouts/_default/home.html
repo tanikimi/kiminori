@@ -1,0 +1,133 @@
+{{ define "main" }}
+<!-- ヒーロー -->
+<div class="home-hero-wrapper">
+  <div class="home-hero-container">
+    <h1>Welcome to kiminori.me</h1>
+    <p>
+      Kiminori is a university student studying simple, functional, and fun design.
+    </p>
+    <a href="{{.Site.BaseURL}}about" title="kiminori.me | About">
+      <span>Read More</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+      </svg>
+    </a>
+  </div>
+</div>
+
+<section class="home-works">
+  <h2>Works</h2>
+  <div class="works-card-area">
+    <!-- Work最新記事 6件抜き出し 投稿逆順に表示-->
+    {{ range first 6 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "works") }}
+    <article class="works-card">
+      <a class="works-card-a" href="{{.Permalink}}"></a>
+      {{ $filepath := printf "img/%s.jpg" .Params.thumbnail }}
+      {{ $alt := printf "「%s」のサムネイル" .Title}}
+      {{ with .Page.Resources.GetMatch $filepath }}
+      {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
+      <picture>
+        <source srcset="{{.RelPermalink}}" type="image/webp">
+        <img src="/{{ $filepath }}" alt="{{ $alt }}" loading="lazy">
+      </picture>
+      {{ end }}
+      {{ end }}
+      <h3>{{.Title}}</h3>
+      <div class="works-card-category">
+        <a class="article-category-item" href="{{.Parent.Permalink}}">{{.Parent.Title}}</a>
+      </div>
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format "2006" }}
+      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    </article>
+    {{ end }}
+  </div>
+  <!-- View More -->
+  <div class="home-view_more">
+    <a href="{{.Site.BaseURL}}works" title="kiminori.me | Works">View More</a>
+  </div>
+</section>
+
+<!-- Latest News & Blog -->
+<div class="home-news_and_blog-wrapper">
+  <section class="home-list">
+    <h2>News</h2>
+    <!-- News最新記事 3件抜き出し 投稿逆順に表示-->
+    {{ range first 3 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "news") }}
+    <article class="home-list-item">
+      <a class="home-list-item-a" href="{{.Permalink}}"></a>
+      <h3>{{.Title}}</h3>
+      <div class="home-list-item-category">
+        <a class="article-category-item" href="{{.Parent.Permalink}}">{{.Parent.Title}}</a>
+      </div>
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format "2006/01/02" }}
+      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+      <p class="home-list-item-summary">
+        {{.Summary}}
+      </p>
+    </article>
+    {{ end }}
+    <!-- View More -->
+    <div class="home-view_more">
+      <a href="{{.Site.BaseURL}}news" title="kiminori.me | News">View More</a>
+    </div>
+  </section>
+  <section class="home-list">
+    <h2>Blog</h2>
+    <!-- Blog最新記事 3件抜き出し 投稿逆順に表示-->
+    {{ range first 3 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "blog") }}
+    <article class="home-list-item">
+      <a class="home-list-item-a" href="{{.Permalink}}"></a>
+      <h3>{{.Title}}</h3>
+      <div class="home-list-item-category">
+        <a class="article-category-item" href="{{.Parent.Permalink}}">{{.Parent.Title}}</a>
+      </div>
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format "2006/01/02" }}
+      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+      <p class="home-list-item-summary">
+        {{.Summary}}
+      </p>
+    </article>
+    {{ end }}
+    <!-- View More -->
+    <div class="home-view_more">
+      <a href="{{.Site.BaseURL}}blog" title="kiminori.me | Blog">View More</a>
+    </div>
+  </section>
+</div>
+<section class="link">
+  <h2>Link</h2>
+  <div class="link-card-wrapper">
+    <a class="link-card">
+      <h3>E-Mail</h3>
+      <span>hello@kiminori.me</span>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222">
+        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+      </svg>
+    </a>
+    <a class="link-card" href="https://x.com/kiminori_me" target="_blank">
+      <h3>X</h3>
+      <span>@kiminori_me</span>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222">
+        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+      </svg>
+    </a>
+    <a class="link-card" href="https://www.instagram.com/tngw_k/" target="_blank">
+      <h3>Instagram</h3>
+      <span>@tngw_k</span>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222">
+        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+      </svg>
+    </a>
+    <a class="link-card" href="https://github.com/tanikimi" target="_blank">
+      <h3>GitHub</h3>
+      <span>@tanikimi</span>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222">
+        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+      </svg>
+    </a>
+  </div>
+</section>
+{{ end }}

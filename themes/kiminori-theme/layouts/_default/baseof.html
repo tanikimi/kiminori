@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+
+<head>
+  {{ partial "head.html" . }}
+</head>
+
+<body>
+  <header class="header" id="header">
+    {{ partial "header.html" . }}
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="footer">
+    {{ partial "footer.html" . }}
+  </footer>
+
+  <script type="text/javascript" src="/js/humberger.js"></script>
+  {{ if .IsPage }}
+  <script type="text/javascript" src="/js/copy.js"></script>
+  {{ end }}
+  {{ if and .IsPage (in "blog news" .Section) }}
+  <script type="text/javascript" src="/js/outline.js"></script>
+  {{ end }}
+  {{ if and .IsSection (in "works blog news" .Section)}}
+  <script type="text/javascript" src="/js/filter.js"></script>
+  {{ end }}
+  {{ if eq .Section "about" }}
+  <script type="text/javascript" src="/js/favorites-box-btn.js"></script>
+  <script type="text/javascript" src="/js/vanilla-tilt.js"></script>
+  {{ end }}
+</body>
+
+</html>

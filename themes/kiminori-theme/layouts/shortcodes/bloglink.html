@@ -1,0 +1,23 @@
+<div class="bloglink">
+    <a class="bloglink-a" href="{{.Params.url}}" target="_blank" rel="noopener noreferrer"></a>
+    <div class="bloglink-group">
+        <div class="bloglink-title">
+            <span>{{.Params.title}}</span>
+        </div>
+        <div class="bloglink-description">
+            <span>
+                {{.Params.description}}
+            </span>
+        </div>
+        <div class="bloglink-url">
+            <img
+                src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url={{.Params.url}}&size=32">
+            <span>{{.Params.url}}</span>
+        </div>
+    </div>
+    {{ if .Params.image }}
+    <div class="bloglink-img">
+        <img src="{{.Params.image}}">
+    </div>
+    {{ end }}
+</div>

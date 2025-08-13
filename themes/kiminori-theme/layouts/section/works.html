@@ -1,0 +1,75 @@
+{{ define "main" }}
+<div class="works" id="list" data-section="{{.Title}}">
+    <h1>Works</h1>
+    <div class="filter-wrapper">
+        <a class="filter" href="{{.Site.BaseURL}}{{.Section}}" id="filterAll">All {{.FirstSection.Title}}</a>
+        <div class="separator"></div>
+        {{ if eq .Title .FirstSection.Title}}
+        {{ range .Pages }}
+        {{ if .IsSection }}
+        <a class="filter" href="{{.Permalink}}" id="filter{{ .Title }}">{{ .Title }}</a>
+        {{ end }}
+        {{ end }}
+        <div class="select-container">
+            <select id="select">
+                <option value="" disabled selected>Category</option>
+                {{ range .Pages }}
+                {{ if .IsSection }}
+                <option value="filter{{ .Title }}">{{ .Title }}</option>
+                {{ end }}
+                {{ end }}
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path
+                    d="M480-120 300-300l58-58 122 122 122-122 58 58-180 180ZM358-598l-58-58 180-180 180 180-58 58-122-122-122 122Z" />
+            </svg>
+        </div>
+
+        {{ else }}
+        {{ range .Parent.Pages }}
+        {{ if .IsSection }}
+        <a class="filter" href="{{.Permalink}}" id="filter{{ .Title }}">{{ .Title }}</a>
+        {{ end }}
+        {{ end }}
+        <div class="select-container">
+            <select id="select">
+                <option value="" disabled selected>Category</option>
+                {{ range .Parent.Pages }}
+                {{ if .IsSection }}
+                <option value="filter{{ .Title }}">{{ .Title }}</option>
+                {{ end }}
+                {{ end }}
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path
+                    d="M480-120 300-300l58-58 122 122 122-122 58 58-180 180ZM358-598l-58-58 180-180 180 180-58 58-122-122-122 122Z" />
+            </svg>
+        </div>
+        {{ end }}
+    </div>
+    <div class="works-card-area">
+        {{ range .RegularPagesRecursive }}
+        <article class="works-card">
+            <a class="works-card-a" href="{{.RelPermalink}}"></a>
+            {{ $filepath := printf "img/%s.jpg" .Params.thumbnail }}
+            {{ $alt := printf "「%s」のサムネイル" .Title}}
+            {{ with .Page.Resources.GetMatch $filepath }}
+            {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
+            <picture>
+                <source srcset="{{.RelPermalink}}" type="image/webp">
+                <img src="/{{ $filepath }}" alt="{{ $alt }}" loading="lazy">
+            </picture>
+            {{ end }}
+            {{ end }}
+            <h3>{{.Title}}</h3>
+            <div class="works-card-category">
+                <a class="article-category-item" href="{{.Parent.Permalink}}">{{.Parent.Title}}</a>
+            </div>
+            {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+            {{ $dateHuman := .Date | time.Format "2006" }}
+            <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

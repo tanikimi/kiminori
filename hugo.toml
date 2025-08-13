@@ -1,0 +1,5 @@
+baseURL = 'https://example.org/'
+languageCode = 'ja-jp'
+title = 'kiminori.me'
+theme = 'kiminori-theme'
+pygmentsUseClasses = true

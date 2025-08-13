@@ -1,0 +1,73 @@
+{{ define "main" }}
+<div class="list" id="list" data-section="{{.Title}}">
+
+    {{ if in "Blog News" .FirstSection.Title}}
+    <h1>{{.FirstSection.Title}}</h1>
+    {{ else }}
+    <h1> <a href="{{.Site.BaseURL}}tags" title="kiminori.me | Tags">Tag</a>: #{{.Title}}</h1>
+    {{ end }}
+
+    {{ if in "Blog News" .FirstSection.Title}}
+    <div class="filter-wrapper">
+        <a class="filter" href="{{.Site.BaseURL}}{{.Section}}" id="filterAll">All {{.FirstSection.Title}}</a>
+        <div class="separator"></div>
+        {{ if eq .Title .FirstSection.Title}}
+        {{ range .Pages }}
+        {{ if .IsSection }}
+        <a class="filter" href="{{.Permalink}}" id="filter{{ .Title }}">{{ .Title }}</a>
+        {{ end }}
+        {{ end }}
+        <div class="select-container">
+            <select id="select">
+                <option value="" disabled selected>Category</option>
+                {{ range .Pages }}
+                {{ if .IsSection }}
+                <option value="filter{{ .Title }}">{{ .Title }}</option>
+                {{ end }}
+                {{ end }}
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path
+                    d="M480-120 300-300l58-58 122 122 122-122 58 58-180 180ZM358-598l-58-58 180-180 180 180-58 58-122-122-122 122Z" />
+            </svg>
+        </div>
+
+        {{ else }}
+        {{ range .Parent.Pages }}
+        {{ if .IsSection }}
+        <a class="filter" href="{{.Permalink}}" id="filter{{ .Title }}">{{ .Title }}</a>
+        {{ end }}
+        {{ end }}
+        <div class="select-container">
+            <select id="select">
+                <option value="" disabled selected>Category</option>
+                {{ range .Parent.Pages }}
+                {{ if .IsSection }}
+                <option value="filter{{ .Title }}">{{ .Title }}</option>
+                {{ end }}
+                {{ end }}
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path
+                    d="M480-120 300-300l58-58 122 122 122-122 58 58-180 180ZM358-598l-58-58 180-180 180 180-58 58-122-122-122 122Z" />
+            </svg>
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    {{ range .RegularPagesRecursive }}
+    <article class="list-article">
+        <a class="list-article-a" href="{{.Permalink}}"></a>
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format "2006/01/02" }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        <h3>{{.Title}}</h3>
+        <p class="list-article-summary">{{.Summary}}</p>
+        <div class="list-article-category">
+            <a class="article-category-item" href="{{.Parent.Permalink}}">{{.Parent.Title}}</a>
+        </div>
+    </article>
+    {{ end }}
+</div>
+{{ end }}
