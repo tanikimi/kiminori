@@ -1594,6 +1594,13 @@ body.on {
   }
 }
 
+/* iPhoneのみの調整 */
+
+_::-webkit-full-page-media,
+_:future,
+:root .highlight pre code * {
+  height: 16px;
+}
 
 /* 目次部分 */
 
