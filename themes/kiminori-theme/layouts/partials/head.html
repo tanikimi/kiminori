@@ -15,3 +15,13 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
+
+<meta property="og:url" content="{{.Permalink}}" />
+<meta property="og:title"
+    content='{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}' />
+{{ if and .IsPage (in "works" .Section) }}
+{{ $filepath := printf "img/%s.jpg" .Params.thumbnail }}
+<meta property="og:image" content="{{.Permalink}}{{ $filepath }}" />
+{{ else }}
+<meta property="og:image" content="{{.Permalink}}/ogp.png" />
+{{ end }}
