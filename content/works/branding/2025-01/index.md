@@ -1,8 +1,8 @@
 +++
-draft = true
+draft = false
 
 title = 'WCPC Brand Design'
-date = 2025-07-10T20:25:49+09:00
+date = 2025-08-13T14:00:00+09:00
 
 thumbnail = "wcpc-logo-thumbnail"
 

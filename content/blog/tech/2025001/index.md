@@ -1,8 +1,8 @@
 +++
-draft = true
+draft = false
 
 title = 'Hugoでホームページを自作したよメモ'
-date = 2025-08-12T18:15:33+09:00
+date = 2025-08-13T14:00:00+09:00
 
 tags = ["Hugo", "Web"]
 
