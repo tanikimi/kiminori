@@ -3,3 +3,6 @@ languageCode = 'ja-jp'
 title = 'kiminori.me'
 theme = 'kiminori-theme'
 pygmentsUseClasses = true
+
+capitalizeListTitles = false
+titleCaseStyle = 'none'
