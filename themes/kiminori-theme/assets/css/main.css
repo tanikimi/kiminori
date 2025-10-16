@@ -1800,11 +1800,15 @@ _:future,
     }
   }
 
+  .studying {
+    margin-bottom: 64px;
+  }
+
   .studying-kanban-wrapper {
     display              : grid;
     gap                  : 16px;
     grid-template-columns: repeat(4, 1fr);
-    margin-bottom        : 64px;
+    margin-bottom        : 32px;
   }
 
   @media (500px<=width<900px) {
@@ -1877,7 +1881,14 @@ _:future,
     color      : var(--color-gray);
     font-size  : var(--font-size-16);
     font-weight: var(--font-weight-light);
-    margin     : 32px 0 0 4px;
+    margin     : 0 0 0 4px;
+  }
+
+  .studying-copyright {
+    color      : var(--color-gray);
+    font-size  : var(--font-size-12);
+    font-weight: var(--font-weight-light);
+    margin     : 16px 0 0 4px;
   }
 
   .favorites {
