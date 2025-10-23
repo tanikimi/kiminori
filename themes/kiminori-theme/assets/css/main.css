@@ -522,9 +522,9 @@ body.on {
       gap                  : 8px 16px;
       grid-template-columns: auto 1fr auto;
       grid-template-areas  :
-        "title _1 category"
+        "title title title"
         "date _3 category"
-        "summary summary category";
+        "summary summary summary";
       padding : 16px 8px;
       position: relative;
 
@@ -544,14 +544,18 @@ body.on {
         margin            : 0;
         overflow          : hidden;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 1;
       }
     }
 
     .home-list-item-category {
       grid-area: category;
-      margin   : 0;
+      margin   : 4px 0;
       z-index  : 2;
+
+      a {
+        display: block;
+      }
     }
 
     time {
@@ -738,7 +742,7 @@ body.on {
     grid-template-areas  :
       "date title category"
       "date summary category";
-    padding : 16px 4px;
+    padding : 16px 8px;
     position: relative;
 
     .list-article-a {
@@ -788,6 +792,11 @@ body.on {
       place-content: center;
       text-align   : right;
       z-index      : 2;
+
+      a {
+        display: block;
+        margin : 4px 0;
+      }
     }
   }
 
@@ -799,9 +808,9 @@ body.on {
     .list-article {
       grid-template-columns: 1fr auto;
       grid-template-areas  :
-        "title category"
+        "title title"
         "date category"
-        "summary category";
+        "summary summary";
     }
   }
 }
