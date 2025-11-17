@@ -27,6 +27,6 @@
 <meta property="og:image" content="{{.Permalink}}{{ $filepath }}" />
 <meta name="twitter:image" content="{{.Permalink}}{{ $filepath }}">
 {{ else }}
-<meta property="og:image" content="{{.Permalink}}/ogp.png" />
-<meta name="twitter:image" content="{{.Permalink}}/ogp.png">
+<meta property="og:image" content="{{$.Site.BaseURL}}ogp.png" />
+<meta name="twitter:image" content="{{$.Site.BaseURL}}ogp.png">
 {{ end }}
