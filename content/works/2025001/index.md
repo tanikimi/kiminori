@@ -9,7 +9,7 @@ categories = ["Branding"]
 thumbnail = "wcpc-logo-thumbnail"
 
 client = "WCPC"
-role = "Brand Design"
+role = "Design"
 link = ["WCPC Official X", "https://x.com/wakayama_mishou"]
 
 note = "和歌山大学の競技プログラミング非公式サークル、WCPC様よりご依頼をいただき、ブランドデザインを担当しました。山水のモチーフと、機械的なデザインを融合させ、和歌山大学にあるプログラミングサークルならではのデザインの実現を目指しました。"
