@@ -1174,8 +1174,11 @@ body.on {
   }
 
   .works-article-info-category {
-    display: flex;
-    gap    : 8px;
+    display        : flex;
+    flex-wrap      : wrap;
+    gap            : 8px;
+    justify-content: flex-end;
+    margin-left    : 16px;
   }
 
   .works-article-info-list {
@@ -1205,6 +1208,10 @@ body.on {
 
       span:first-of-type {
         color: var(--color-gray);
+      }
+
+      span:last-of-type {
+        text-align: right;
       }
     }
 
@@ -1248,6 +1255,13 @@ body.on {
       width        : 100%;
     }
   }
+
+  object {
+    aspect-ratio: 4/3;
+    display     : block;
+    margin      : 24px 0;
+  }
+
 }
 
 

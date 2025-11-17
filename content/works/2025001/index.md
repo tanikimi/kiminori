@@ -1,7 +1,7 @@
 +++
 draft = false
 
-title = 'WCPC Brand Design'
+title = 'WCPC'
 date = 2025-08-13T14:00:00+09:00
 
 categories = ["Branding"]
