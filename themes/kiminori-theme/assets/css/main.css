@@ -1207,7 +1207,8 @@ body.on {
       }
 
       span:first-of-type {
-        color: var(--color-gray);
+        color       : var(--color-gray);
+        margin-right: 8px;
       }
 
       span:last-of-type {
