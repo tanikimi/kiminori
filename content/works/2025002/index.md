@@ -1,8 +1,8 @@
 +++
-draft = true
+draft = false
 
 title = 'Tidy'
-date = 2025-11-17T19:54:39+09:00
+date = 2025-11-17T22:00:00+09:00
 
 thumbnail = "tidy-thumbnail"
 
