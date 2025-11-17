@@ -4,7 +4,8 @@ draft = false
 title = 'アプリデザイン総合演習のすゝめ'
 date = 2025-10-16T00:00:00+09:00
 
-tags = []
+categories = ["Note"]
+tags = ["University"]
 
 summary = "和歌山大学屈指の難関授業、アプリデザイン総合演習への向き合い方をまとめた備忘録です。"
 +++

@@ -25,7 +25,7 @@
   {{ if and .IsPage (in "blog news" .Section) }}
   <script type="text/javascript" src="/js/outline.js"></script>
   {{ end }}
-  {{ if and .IsSection (in "works blog news" .Section)}}
+  {{ if or (and .IsSection (in "works blog news" .Section)) (eq "categories" .Section)}}
   <script type="text/javascript" src="/js/filter.js"></script>
   {{ end }}
   {{ if eq .Section "about" }}

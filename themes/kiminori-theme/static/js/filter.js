@@ -11,11 +11,11 @@ switch (section) {
     case "News":
     case "Blog":
         select.value = "";
-        document.getElementById("filterAll").classList.add("select");
+        document.getElementById("filter-All").classList.add("select");
         break;
     default:
-        document.getElementById("filter" + section).classList.add("select");
-        select.value = "filter" + section;
+        document.getElementById("filter-" + section).classList.add("select");
+        select.value = "filter-" + section;
         break;
 }
 

@@ -4,6 +4,8 @@ draft = false
 title = 'WCPC Brand Design'
 date = 2025-08-13T14:00:00+09:00
 
+categories = ["Branding"]
+
 thumbnail = "wcpc-logo-thumbnail"
 
 client = "WCPC"

@@ -4,7 +4,8 @@ draft = false
 title = 'Hugoでホームページを自作したよメモ'
 date = 2025-08-13T14:00:00+09:00
 
-tags = ["hugo", "web"]
+categories = ["Tech"]
+tags = ["HUGO", "Web"]
 
 summary = "Hugoでホームページを自作した際の備忘録的なメモです。"
 +++

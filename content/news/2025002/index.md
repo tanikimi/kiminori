@@ -4,6 +4,7 @@ draft = false
 title = '第14回 e-ZUKAスマートアプリコンテスト2025 で TRIART賞を受賞しました'
 date = 2025-10-16T11:00:54+09:00
 
+categories = ["Award"]
 tags = []
 
 summary = "第14回 e-ZUKAスマートアプリコンテスト2025 で TRIART賞を受賞しました。"

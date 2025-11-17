@@ -34,7 +34,9 @@
       {{ end }}
       <h3>{{.Title}}</h3>
       <div class="works-card-category">
-        <a class="article-category-item" href="{{.Parent.Permalink}}">{{.Parent.Title}}</a>
+        {{ range .Params.Categories }}
+        <a class="article-category-item" href="{{$.Site.BaseURL}}categories/{{.}}">{{.}}</a>
+        {{ end }}
       </div>
       {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
       {{ $dateHuman := .Date | time.Format "2006" }}
@@ -58,7 +60,9 @@
       <a class="home-list-item-a" href="{{.Permalink}}"></a>
       <h3>{{.Title}}</h3>
       <div class="home-list-item-category">
-        <a class="article-category-item" href="{{.Parent.Permalink}}">{{.Parent.Title}}</a>
+        {{ range .Params.Categories }}
+        <a class="article-category-item" href="{{$.Site.BaseURL}}categories/{{.}}">{{.}}</a>
+        {{ end }}
       </div>
       {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
       {{ $dateHuman := .Date | time.Format "2006/01/02" }}
@@ -81,7 +85,9 @@
       <a class="home-list-item-a" href="{{.Permalink}}"></a>
       <h3>{{.Title}}</h3>
       <div class="home-list-item-category">
-        <a class="article-category-item" href="{{.Parent.Permalink}}">{{.Parent.Title}}</a>
+        {{ range .Params.Categories }}
+        <a class="article-category-item" href="{{$.Site.BaseURL}}categories/{{.}}">{{.}}</a>
+        {{ end }}
       </div>
       {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
       {{ $dateHuman := .Date | time.Format "2006/01/02" }}

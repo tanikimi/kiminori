@@ -6,7 +6,7 @@ date = {{ .Date }}
 
 thumbnail = ""
 
-categories = ""
+categories = [""]
 
 client = ""
 role = ""

@@ -4,6 +4,8 @@ draft = false
 title = 'ホームページを公開しました'
 date = 2025-08-13T14:00:00+09:00
 
+categories = ["Info"]
+
 summary = "ホームページ、kiminori.me を制作し公開しました。"
 +++
 
