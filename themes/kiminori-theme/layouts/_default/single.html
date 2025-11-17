@@ -8,7 +8,7 @@
       <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
       <div class="article-category-area">
         {{ range .Params.Categories }}
-        <a class="article-category-item" href="{{$.Site.BaseURL}}categories/{{.}}">{{.}}</a>
+        <a class="article-category-item" href="{{$.Site.BaseURL}}categories/{{. | urlize }}">{{.}}</a>
         {{ end }}
       </div>
     </div>
@@ -16,7 +16,7 @@
     <ul class="article-tag-area">
       {{ $BaseURL := .Site.BaseURL }}
       {{ range $tag := .Params.tags }}
-      <li><a href="{{$BaseURL}}/tags/{{ $tag }}">#{{ $tag }}</a></li>
+      <li><a href="{{$BaseURL}}/tags/{{ $tag | urlize }}">#{{ $tag }}</a></li>
       {{ end }}
     </ul>
     {{ end }}

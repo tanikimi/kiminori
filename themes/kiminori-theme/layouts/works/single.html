@@ -8,7 +8,7 @@
             <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
             <div class="works-article-info-category">
                 {{ range .Params.Categories }}
-                <a class="article-category-item" href="{{$.Site.BaseURL}}categories/{{.}}">{{.}}</a>
+                <a class="article-category-item" href="{{$.Site.BaseURL}}categories/{{. | urlize }}">{{.}}</a>
                 {{ end }}
             </div>
         </div>
