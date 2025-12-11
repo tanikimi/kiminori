@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 
 title = 'kiminori.me 勝手にベストアワード 2025'
 date = 2025-12-11T15:30:00+09:00
