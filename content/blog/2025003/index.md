@@ -191,7 +191,7 @@ sam gellaitry の2021年の楽曲。
 
 {{<bloglink title="石神のぞみ / Ishigami Nozomi【にじさんじ】 - YouTube" description="ゲームが下手です。Welcome to Underground…にじさんじ所属、石神のぞみです。スーパーカリスマインフルエンサーを目指す、悪魔と人間のハーフ！（自称）世界征服が目標です。" url="https://www.youtube.com/@IshigamiNozomi" image="https://yt3.googleusercontent.com/XxOEKuwoRXgwJI7TlGK2EiKxTiMsj0KVXxTzpQevz4ljZd8Bfr8m9gc-KKCzy0fdmnT4hcuUoFw=s900-c-k-c0x00ffffff-no-rj">}}
 
-にじさんじ所属のカリスマインフルエンサー（自称）。
+にじさんじ所属のスーパーカリスマインフルエンサー（自称）。
 
 一言で表すならば「おもれ〜人（おもれ〜んちゅ）」。常識とおふざけの塩梅が絶妙で、その引き出しの多さを活かしたトークが聞いてて飽きないです。プレイするゲームも僕好みなのも良い。また、今年日本語ラップをよく聞いたのも彼女の影響だったりします。
 
