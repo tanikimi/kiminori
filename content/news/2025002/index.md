@@ -20,6 +20,8 @@ summary = "第14回 e-ZUKAスマートアプリコンテスト2025 で TRIART賞
 
 ## リンク
 
+[e-ZUKA スマートアプリコンテスト2025にてアプリデザイン総合演習作品が受賞 | 和歌山大学](https://www.wakayama-u.ac.jp/sys/award_newsys/2025101700169/)
+
 [飯塚市／第14回e-ZUKAスマートアプリコンテスト2025](https://www.city.iizuka.lg.jp/sangakurenke/sangyo/shinsangyo/sogyo/contest.html)
 
 [e-ZUKA SMART APP CONTEST 2025 - トップページ](https://e-zuka.info/2025/)
