@@ -1198,7 +1198,8 @@ body.on {
         font-weight: var(--font-weight-normal);
 
         a {
-          color: var(--color-orange);
+          color      : var(--color-orange);
+          line-height: 16px;
         }
 
         a:visited {
@@ -1260,7 +1261,7 @@ body.on {
   object {
     aspect-ratio: 4/3;
     display     : block;
-    margin      : 24px 0;
+    margin      : 0;
   }
 
 }

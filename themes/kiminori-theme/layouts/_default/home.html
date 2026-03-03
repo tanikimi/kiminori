@@ -18,8 +18,8 @@
 <section class="home-works">
   <h2>Works</h2>
   <div class="works-card-area">
-    <!-- Work最新記事 6件抜き出し 投稿逆順に表示-->
-    {{ range first 6 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "works") }}
+    <!-- Work最新記事 4件抜き出し 投稿逆順に表示-->
+    {{ range first 4 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "works") }}
     <article class="works-card">
       <a class="works-card-a" href="{{.Permalink}}"></a>
       {{ $filepath := printf "img/%s.jpg" .Params.thumbnail }}

@@ -27,7 +27,7 @@
                     {{ if eq (index .Params.link 0) ("") }}
                     None
                     {{ else }}
-                    <a href="{{index .Params.link 1}}">{{index .Params.link 0}}</a>
+                    <a href="{{index .Params.link 1}}" target="_blank">{{index .Params.link 0}}</a>
                     {{ end }}
                 </span>
             </div>
