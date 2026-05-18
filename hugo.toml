@@ -1,5 +1,9 @@
 baseURL = 'https://kiminori.me/'
-languageCode = 'ja-jp'
 title = 'kiminori.me'
 theme = 'kiminori-theme'
 pygmentsUseClasses = true
+
+defaultContentLanguage = "ja"
+[languages]
+    [languages.ja]
+        direction = "ltr"

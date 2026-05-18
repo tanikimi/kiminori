@@ -31,11 +31,11 @@ newDivLast.className = "bottom";
 document.getElementById("article-share").parentNode.insertBefore(newDivLast, document.getElementById("article-share"));
 
 // 交差判定の場所を固定header分調整
-let headerHeight = document.getElementById("header").clientHeight * -1;
+let headerHeight = document.getElementById("header").clientHeight * -1 - 16;
 
 // 交差判定の設定
 const options = {
-    rootMargin: headerHeight + "px 0px 0px 0px",
+    rootMargin: headerHeight + "px 0px 32px 0px",
     threshold: 1
 };
 
