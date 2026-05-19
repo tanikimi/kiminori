@@ -1,32 +1,37 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Kiminori's Web Portfolio">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Kiminori's Web Portfolio" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"
+/>
 
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/syntax.css" />
 
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
-{{ partialCached "head/css.html" . }}
-{{ partialCached "head/js.html" . }}
+<title>
+    {{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}
+</title>
+{{ partialCached "head/css.html" . }} {{ partialCached "head/js.html" . }}
 
 <meta property="og:url" content="{{.Permalink}}" />
-<meta property="og:title"
-    content='{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}' />
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title"
-    content='{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}'>
-{{ if and .IsPage (in "works" .Section) }}
-{{ $filepath := printf "img/%s.jpg" .Params.thumbnail }}
+<meta
+    property="og:title"
+    content='{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}'
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta
+    name="twitter:title"
+    content='{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}'
+/>
+{{ if and .IsPage (in "works" .Section) }} {{ $filepath := printf "img/%s.jpg" .Params.thumbnail }}
 <meta property="og:image" content="{{.Permalink}}{{ $filepath }}" />
-<meta name="twitter:image" content="{{.Permalink}}{{ $filepath }}">
+<meta name="twitter:image" content="{{.Permalink}}{{ $filepath }}" />
 {{ else }}
 <meta property="og:image" content="{{$.Site.BaseURL}}ogp.png" />
-<meta name="twitter:image" content="{{$.Site.BaseURL}}ogp.png">
+<meta name="twitter:image" content="{{$.Site.BaseURL}}ogp.png" />
 {{ end }}

@@ -21,7 +21,7 @@
     <!-- Work最新記事 4件抜き出し 投稿逆順に表示-->
     {{ range first 4 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "works") }}
     <article class="works-card">
-      <a class="works-card-a" href="{{.Permalink}}"></a>
+      <a class="works-card-a" href="{{.Permalink}}" title="{{.Title}}"></a>
       {{ $filepath := printf "img/%s.jpg" .Params.thumbnail }}
       {{ $alt := printf "「%s」のサムネイル" .Title}}
       {{ with .Page.Resources.GetMatch $filepath }}
@@ -57,7 +57,7 @@
     <!-- News最新記事 3件抜き出し 投稿逆順に表示-->
     {{ range first 3 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "news") }}
     <article class="home-list-item">
-      <a class="home-list-item-a" href="{{.Permalink}}"></a>
+      <a class="home-list-item-a" href="{{.Permalink}}" title="{{.Title}}"></a>
       <h3>{{.Title}}</h3>
       <div class="home-list-item-category">
         {{ range .Params.Categories }}
@@ -82,7 +82,7 @@
     <!-- Blog最新記事 3件抜き出し 投稿逆順に表示-->
     {{ range first 3 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "blog") }}
     <article class="home-list-item">
-      <a class="home-list-item-a" href="{{.Permalink}}"></a>
+      <a class="home-list-item-a" href="{{.Permalink}}" title="{{.Title}}"></a>
       <h3>{{.Title}}</h3>
       <div class="home-list-item-category">
         {{ range .Params.Categories }}
